@@ -1,0 +1,19 @@
+{
+  "name": "mcp-agent-local",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.5",
+    "@types/react": "19.1.2",
+    "typescript": "5.8.3"
+  }
+}
