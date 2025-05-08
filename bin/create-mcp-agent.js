@@ -12,6 +12,8 @@ const isServer = args.includes('--with-server');
 const personalityArg = args.find(arg => arg.startsWith('--personality=')) || '';
 const selectedPersonality = personalityArg.split('=')[1] || null;
 
+const shouldPromptPersonality = args.includes('--choose-personality');
+
 async function getMode() {
   if (isLocal || isServer) return isServer ? 'server' : 'local';
   const response = await prompts({
@@ -28,6 +30,7 @@ async function getMode() {
 
 async function getPersonality() {
   if (selectedPersonality) return selectedPersonality;
+  if (!shouldPromptPersonality) return 'blank';
   const response = await prompts({
     type: 'select',
     name: 'personality',
@@ -38,7 +41,7 @@ async function getPersonality() {
       { title: '💅 Motivational + Sassy', value: 'sassy' }
     ]
   });
-  return response.personality;
+  return response.personality || 'blank';
 }
 
 async function getConnectionString() {
@@ -88,8 +91,8 @@ function injectPersonality(templateDir, personality, targetDir) {
 
   if (mode === 'server') {
     const connectionString = await getConnectionString();
-    fs.writeFileSync(path.join(targetDir, '.env'), `DATABASE_URL=${connectionString}\n`);
-    console.log('🔐 .env file created with database connection string');
+    fs.writeFileSync(path.join(targetDir, '.env'), `DATABASE_URL=${connectionString}\nGOOGLE_TOKEN=your-google-access-token-here\n`);
+    console.log('🔐 .env file created with database connection string and Google token');
   }
 
   console.log('📦 Installing dependencies...');

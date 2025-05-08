@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-export default function ChatBox({ personality, setPersonality }: { personality: string; setPersonality: (p: string) => void }) {
+export default ({personality, setPersonality}: { personality: string; setPersonality: (p: string) => void }) => {
     const [input, setInput] = useState('');
   const [reply, setReply] = useState('');
   const [memory, setMemory] = useState<string[]>([]);

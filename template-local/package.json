@@ -7,7 +7,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "gaxios": "^6.7.1",
+    "googleapis": "^148.0.0",
     "next": "latest",
+    "node-fetch": "^3.3.2",
+    "node-quickbooks": "^2.0.45",
     "react": "latest",
     "react-dom": "latest"
   },

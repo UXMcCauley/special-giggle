@@ -1,4 +1,3 @@
-// import {identity} from '../../../agent/identity';
 import {memory} from '../../../agent/memory';
 
 export async function POST(req: Request) {
