@@ -155,6 +155,37 @@ This application is configured for deployment on Vercel.
 
 5. Access the application at http://localhost:3000
 
+## Testing UI with Device and Vocal Input
+
+The application includes a user-friendly interface for testing your MCP agent with both text and voice input:
+
+### Features
+
+- **Voice Input**: Use the microphone button to speak directly to your agent
+- **Device Selection**: Choose from available audio input devices
+- **Personality Selection**: Switch between different agent personalities (Pragmatist, Sassy, Innocent)
+- **Visual Feedback**: See when voice recognition is active
+- **Memory Display**: View the agent's memory of past interactions
+
+### Using Voice Input
+
+1. Open the application in a supported browser (Chrome, Edge, or Safari recommended)
+2. Select your preferred audio input device from the dropdown
+3. Click the microphone button to start speaking
+4. Speak clearly into your microphone
+5. The text will appear in the input field as you speak
+6. Click the microphone button again to stop recording or click Send to submit your message
+
+### Browser Compatibility
+
+Voice input requires the Web Speech API, which is supported in:
+- Google Chrome
+- Microsoft Edge
+- Safari
+- Some versions of Firefox
+
+The application will automatically detect if your browser supports speech recognition and display a status message.
+
 ## Testing
 
 ### Testing the MCP Endpoint
