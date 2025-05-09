@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/mcp",
+      "dest": "/api/mcp"
+    },
+    {
+      "src": "/api/respond",
+      "dest": "/api/respond"
+    },
+    {
+      "src": "/api/quickbooks/(.*)",
+      "dest": "/api/quickbooks/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "OPENAI_API_KEY": "@openai-api-key",
+    "OPENAI_API_ENDPOINT": "@openai-api-endpoint",
+    "QB_CLIENT_ID": "@qb-client-id",
+    "QB_CLIENT_SECRET": "@qb-client-secret",
+    "QB_REFRESH_TOKEN": "@qb-refresh-token",
+    "QB_REALM_ID": "@qb-realm-id",
+    "QB_USE_SANDBOX": "@qb-use-sandbox"
+  }
+}

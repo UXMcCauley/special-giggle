@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:mcp": "node test/test-mcp.js",
+    "test:ai": "node test/test-ai-endpoint.js"
   },
   "dependencies": {
     "gaxios": "^6.7.1",
